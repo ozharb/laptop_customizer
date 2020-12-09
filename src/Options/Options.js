@@ -21,10 +21,10 @@ export default class Options extends Component{
     return (
         <div className="feature__item">
             <li
-name={this.props.name}
-item={this.props.item}
-checked={this.props.item.name === this.props.selected[this.props.feature].name}
-onClick ={ () => this.updateFeature()}
+            name={this.props.name}
+            item={this.props.item}
+            checked={this.props.item.name === this.props.selected[this.props.feature].name}
+            onClick ={ () => this.updateFeature()}
             >
         <input
         type="radio"
