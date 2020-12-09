@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../index.css';
 import './Main_Form.css'
 import Feature from '../Feature/Feature'
 
 
 
+export default function MainForm({ features, selected, updateFeature }) {
 
-class MainForm extends Component {
-
-    render(){
+   
         const FEATURES = {
             Processor: [
               {
@@ -51,19 +50,26 @@ class MainForm extends Component {
               },
             ]
           };
-          
+
           return (
+            
             <form className="main__form">
             <h2>Customize your laptop</h2>
-            <Feature 
+            {Object.keys(FEATURES).map((key, index, title) => (
+            <Feature
+            feature={key}
+            key={index}
+            title={title[index]}
+            options={FEATURES[key]}
             features = {FEATURES}
-            selected = {this.props.selected}
-            handleUpdate={this.props.handleUpdate}
-            />;
+            selected = {selected}
+            updateFeature={updateFeature}
+           
+            />
+            ))}
           </form>
                 
           )
-    }
+    
 
 }
-export default MainForm;

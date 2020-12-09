@@ -53,3 +53,7 @@
   .feature__option:not(:checked) + .feature__label {
     cursor: pointer;
   }
+
+  li{
+    list-style: none;
+  }
